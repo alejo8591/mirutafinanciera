@@ -11,7 +11,7 @@ var UserSchema = new db.Schema({
 	}
 });
 
-var User = db.moongose.model('User', UserSchema);
+var User = db.mongoose.model('User', UserSchema);
 
 // Exports
 module.exports.addUser = addUser;
