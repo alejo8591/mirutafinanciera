@@ -23,10 +23,10 @@ function addUser(email, name){
 	instance.name = name;
 	instance.save(function(err){
 		if (err) {
-			callback(err);
+			console.log('Error: ' + err);
 		}
 		else{
-			callback(null, instance);
+			console.log('Ok ');
 		}
 	});
 }
