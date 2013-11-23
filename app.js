@@ -8,7 +8,7 @@ var express = require('express'),
  	user = require('./routes/user'),
  	http = require('http'),
  	path = require('path'),
- 	us = require('./models/User'),
+ 	us = require('./models/User.js'),
 	app = express();
 
 // all environments
