@@ -24,7 +24,7 @@ function addUser(email, name){
 	instance.save(function(err){
 		if (err) {
 			callback(err);
-		};
+		}
 		else{
 			callback(null, instance);
 		}
