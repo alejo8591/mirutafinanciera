@@ -37,7 +37,7 @@ app.post('/adduser', function(req, res){
 });
 app.get('/listusers', function(req, res){
 	var users = use.user.find();
-	res.json(users);
+	res.send(users);
 });
 
 http.createServer(app).listen(app.get('port'), app.get('ip'), function(){
