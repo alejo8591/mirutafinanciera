@@ -8,7 +8,7 @@ var express = require('express'),
  	user = require('./routes/user'),
  	http = require('http'),
  	path = require('path'),
- 	us = require('./models/User.js'),
+ 	use = require('./models/User'),
 	app = express();
 
 // all environments
@@ -32,8 +32,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/adduser', function(req, res){
-	console.log(req.body.email);
-	//us.addUser(req.param.email, req.param.name);
+	var adduser = res.json(req.body);
+	use.User.save(adduser);
 });
 
 http.createServer(app).listen(app.get('port'), app.get('ip'), function(){
