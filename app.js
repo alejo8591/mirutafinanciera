@@ -33,7 +33,11 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/adduser', function(req, res){
 	var adduser = res.json(req.body);
-	use.User.save(adduser);
+	use.user.save(adduser);
+});
+app.get('/listusers', function(req, res){
+	var users = use.user.find();
+	res.json(users);
 });
 
 http.createServer(app).listen(app.get('port'), app.get('ip'), function(){

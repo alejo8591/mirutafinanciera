@@ -16,7 +16,7 @@ var User = db.mongoose.model('User', UserSchema);
 // Exports
 module.exports.addUser = addUser;
 
-module.exports.User = User;
+module.exports.user = User;
 
 // Add User to database
 function addUser(user, name){
