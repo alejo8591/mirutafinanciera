@@ -32,8 +32,17 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/adduser', function(req, res){
-	var adduser = res.json(req.body);
-	use.user.save(adduser);
+	user = new use.user({
+		name:req.body.name,
+		email:req.body.email
+	});
+	user.save(function(err){
+		if (!err) {
+			console.log('Created');
+		}else{
+			console.log('Error: '+err);
+		}
+	});
 });
 app.get('/listusers', function(req, res){
 	use.user.find(function(err, listusers){
