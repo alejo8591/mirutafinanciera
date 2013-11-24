@@ -31,10 +31,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.post('/adduser', function(req, res){
-	console.log(req.body);
-	// us.addUser(req.param.email, req.param.name);
-});
+app.post('/adduser', console.log(us.addUser));
 
 http.createServer(app).listen(app.get('port'), app.get('ip'), function(){
   console.log('Express server listening on port ' + app.get('port'));
