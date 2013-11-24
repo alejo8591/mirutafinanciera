@@ -32,8 +32,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/adduser', function(req, res){
-	console.log(req.param.user + '   '+ req.param.email);
-	us.addUser(req.param.email, req.param.name);
+	console.log(req.body);
+	// us.addUser(req.param.email, req.param.name);
 });
 
 http.createServer(app).listen(app.get('port'), app.get('ip'), function(){
